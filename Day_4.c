@@ -21,11 +21,15 @@ int main(int arg, char** argv){
       ok = true;
 
     }
-    for(int i = 0; i<7; i++){
-      if(strstr(line, desired[i])!=NULL){
-        counter++;
-        if(i==0){
-          containsCID = true;
+    char *token;
+    token = strtok(line, " ");
+    while(token!=NULL){
+      for(int i = 0; i<7; i++){
+        if(strstr(line, desired[i])!=NULL){
+          counter++;
+          if(i==0){
+            containsCID = true;
+          }
         }
       }
     }
